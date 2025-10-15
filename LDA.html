@@ -464,21 +464,21 @@ Requirement already satisfied: wrapt in c:\users\lenovo\appdata\local\programs\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset berhasil dimuat. Jumlah data: 360 baris.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset berhasil dimuat. Jumlah data: 9000 baris.
 Contoh data awal:
                                           isi_berita  \
-0  PerbesarPesawat KT-1B Woong Bee yang tergabung...   
-1  PerbesarChief Executive Officer (CEO) Indonesi...   
-2  PerbesarIlustrasi kebakaran. TEMPO/SubektiBaca...   
-3  PerbesarKepala Badan Gizi Nasional Dadan Hinda...   
-4  PerbesarKetua Dewan Pengarah BRIN, Megawati So...   
+0  BRIGADIR JenderalWahyu Yudhayanamenduduki jaba...   
+1  PEMERINTAH Kota Bandung akan membentuk satuan ...   
+2  PANGLIMATNIJenderal Agus Subiyanto kembali mel...   
+3  KELOMPOK organisasi relawan pendukung Presiden...   
+4  STASIUN televisi swastaTrans7meminta maaf atas...   
 
                                  hasil_preprocessing kategori_berita  
-0  [&#39;perbesarpesawat&#39;, &#39;ktb&#39;, &#39;woong&#39;, &#39;bee&#39;, &#39;ga...         politik  
-1  [&#39;perbesarchief&#39;, &#39;executive&#39;, &#39;officer&#39;, &#39;ceo...         politik  
-2  [&#39;perbesarilustrasi&#39;, &#39;bakar&#39;, &#39;temposubektiba...         politik  
-3  [&#39;perbesarkepala&#39;, &#39;badan&#39;, &#39;gizi&#39;, &#39;nasional&#39;...         politik  
-4  [&#39;perbesarketua&#39;, &#39;dewan&#39;, &#39;arah&#39;, &#39;brin&#39;, &#39;me...         politik  
+0  [&#39;brigadir&#39;, &#39;jenderalwahyu&#39;, &#39;yudhayanamendud...         politik  
+1  [&#39;perintah&#39;, &#39;kota&#39;, &#39;bandung&#39;, &#39;bentuk&#39;, &#39;sat...         politik  
+2  [&#39;panglimatnijenderal&#39;, &#39;agus&#39;, &#39;subiyanto&#39;, &#39;...         politik  
+3  [&#39;kelompok&#39;, &#39;organisasi&#39;, &#39;rawan&#39;, &#39;dukung&#39;, ...         politik  
+4  [&#39;stasiun&#39;, &#39;televisi&#39;, &#39;swastatransmeminta&#39;, ...         politik  
 </pre></div>
 </div>
 </div>
@@ -577,7 +577,7 @@ Contoh data awal:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kamus dibuat dan difilter. Jumlah kata unik: 810
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kamus dibuat dan difilter. Jumlah kata unik: 7520
 
 --- Menjalankan HDP untuk estimasi jumlah topik... ---
 </pre></div>
@@ -597,45 +597,94 @@ WARNING:gensim.models.hdpmodel:likelihood is decreasing!
 WARNING:gensim.models.hdpmodel:likelihood is decreasing!
 WARNING:gensim.models.hdpmodel:likelihood is decreasing!
 WARNING:gensim.models.hdpmodel:likelihood is decreasing!
+WARNING:gensim.models.hdpmodel:likelihood is decreasing!
+WARNING:gensim.models.hdpmodel:likelihood is decreasing!
+WARNING:gensim.models.hdpmodel:likelihood is decreasing!
+WARNING:gensim.models.hdpmodel:likelihood is decreasing!
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ HDP mengestimasi ada sekitar: 20 topik.
 
 --- Menjalankan pencarian koherensi dari 5 hingga 40 topik... ---
-Selesai menghitung untuk 5 topik. Skor Koherensi: 0.6037
-Selesai menghitung untuk 10 topik. Skor Koherensi: 0.5783
-Selesai menghitung untuk 15 topik. Skor Koherensi: 0.5795
-Selesai menghitung untuk 20 topik. Skor Koherensi: 0.5665
-Selesai menghitung untuk 25 topik. Skor Koherensi: 0.5400
-Selesai menghitung untuk 30 topik. Skor Koherensi: 0.5332
-Selesai menghitung untuk 35 topik. Skor Koherensi: 0.5064
+Selesai menghitung untuk 5 topik. Skor Koherensi: 0.5864
+Selesai menghitung untuk 10 topik. Skor Koherensi: 0.6391
+Selesai menghitung untuk 15 topik. Skor Koherensi: 0.6648
+Selesai menghitung untuk 20 topik. Skor Koherensi: 0.6779
+Selesai menghitung untuk 25 topik. Skor Koherensi: 0.6315
+Selesai menghitung untuk 30 topik. Skor Koherensi: 0.6789
+Selesai menghitung untuk 35 topik. Skor Koherensi: 0.6472
 
-Total waktu pencarian koherensi: 1.55 menit
+Total waktu pencarian koherensi: 20.85 menit
 </pre></div>
 </div>
-<img alt="_images/c6934137bfd0042872aa71b02f70b4d8e2194a2ee37be8f2e2d9d4cfe10ad569.png" src="_images/c6934137bfd0042872aa71b02f70b4d8e2194a2ee37be8f2e2d9d4cfe10ad569.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Jumlah topik optimal yang ditemukan: 5
+<img alt="_images/cad6d6df9c0f963c415de1022a29b9d7f303cd1b1801acbfe3ebb7e284557505.png" src="_images/cad6d6df9c0f963c415de1022a29b9d7f303cd1b1801acbfe3ebb7e284557505.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Jumlah topik optimal yang ditemukan: 30
 
 --- Melatih model LDA final dengan topik optimal... ---
 
 --- Topik-topik yang Ditemukan oleh Model LDA ---
-Topik: 0
-Kata-kata: 0.026*&quot;&#39;rp&#39;,&quot; + 0.021*&quot;&#39;persen&#39;,&quot; + 0.019*&quot;&#39;indonesia&#39;,&quot; + 0.017*&quot;&#39;pertamina&#39;,&quot; + 0.016*&quot;&#39;harga&#39;,&quot; + 0.015*&quot;&#39;terbang&#39;,&quot; + 0.014*&quot;&#39;pt&#39;,&quot; + 0.010*&quot;&#39;tumpang&#39;,&quot; + 0.010*&quot;&#39;tingkat&#39;,&quot; + 0.009*&quot;&#39;oktober&#39;,&quot; + 0.008*&quot;&#39;usaha&#39;,&quot; + 0.008*&quot;&#39;turun&#39;,&quot; + 0.008*&quot;&#39;us&#39;,&quot; + 0.008*&quot;&#39;juta&#39;,&quot; + 0.008*&quot;&#39;impor&#39;,&quot;
+Topik: 25
+Kata-kata: 0.025*&quot;&#39;korban&#39;,&quot; + 0.023*&quot;&#39;bangun&#39;,&quot; + 0.016*&quot;&#39;orang&#39;,&quot; + 0.015*&quot;&#39;data&#39;,&quot; + 0.012*&quot;&#39;selamat&#39;,&quot; + 0.011*&quot;&#39;pesantren&#39;,&quot; + 0.011*&quot;&#39;proses&#39;,&quot; + 0.010*&quot;&#39;tim&#39;,&quot; + 0.010*&quot;&#39;al&#39;,&quot; + 0.010*&quot;&#39;evakuasi&#39;,&quot; + 0.010*&quot;&#39;oktober&#39;,&quot; + 0.008*&quot;&#39;perintah&#39;,&quot; + 0.008*&quot;&#39;tiktok&#39;,&quot; + 0.008*&quot;&#39;tambang&#39;,&quot; + 0.007*&quot;&#39;menteri&#39;,&quot;
 
-Topik: 1
-Kata-kata: 0.036*&quot;&#39;main&#39;,&quot; + 0.023*&quot;&#39;indonesia&#39;,&quot; + 0.023*&quot;&#39;tanding&#39;,&quot; + 0.022*&quot;&#39;tim&#39;,&quot; + 0.022*&quot;&#39;menang&#39;,&quot; + 0.021*&quot;&#39;kalah&#39;,&quot; + 0.018*&quot;&#39;liga&#39;,&quot; + 0.015*&quot;&#39;gol&#39;,&quot; + 0.015*&quot;&#39;latih&#39;,&quot; + 0.015*&quot;&#39;timnas&#39;,&quot; + 0.014*&quot;&#39;laga&#39;,&quot; + 0.013*&quot;&#39;vs&#39;,&quot; + 0.011*&quot;&#39;lawan&#39;,&quot; + 0.011*&quot;&#39;champions&#39;,&quot; + 0.010*&quot;&#39;open&#39;,&quot;
+Topik: 20
+Kata-kata: 0.015*&quot;&#39;gunung&#39;,&quot; + 0.013*&quot;&#39;gempa&#39;,&quot; + 0.012*&quot;&#39;kota&#39;,&quot; + 0.011*&quot;&#39;wisatawan&#39;,&quot; + 0.011*&quot;&#39;unjung&#39;,&quot; + 0.009*&quot;&#39;wisata&#39;,&quot; + 0.009*&quot;&#39;budaya&#39;,&quot; + 0.008*&quot;&#39;alam&#39;,&quot; + 0.007*&quot;&#39;jalur&#39;,&quot; + 0.007*&quot;&#39;taman&#39;,&quot; + 0.006*&quot;&#39;aktivitas&#39;,&quot; + 0.006*&quot;&#39;kali&#39;,&quot; + 0.005*&quot;&#39;kunjung&#39;,&quot; + 0.005*&quot;&#39;milik&#39;,&quot; + 0.005*&quot;&#39;daki&#39;,&quot;
+
+Topik: 9
+Kata-kata: 0.050*&quot;&#39;jalan&#39;,&quot; + 0.039*&quot;&#39;daerah&#39;,&quot; + 0.034*&quot;&#39;yogyakarta&#39;,&quot; + 0.025*&quot;&#39;dinas&#39;,&quot; + 0.023*&quot;&#39;gubernur&#39;,&quot; + 0.022*&quot;&#39;bangun&#39;,&quot; + 0.021*&quot;&#39;anggar&#39;,&quot; + 0.021*&quot;&#39;perintah&#39;,&quot; + 0.016*&quot;&#39;provinsi&#39;,&quot; + 0.015*&quot;&#39;kota&#39;,&quot; + 0.013*&quot;&#39;kepala&#39;,&quot; + 0.012*&quot;&#39;sumatera&#39;,&quot; + 0.011*&quot;&#39;kabupaten&#39;,&quot; + 0.010*&quot;&#39;utara&#39;,&quot; + 0.010*&quot;&#39;rencana&#39;,&quot;
+
+Topik: 10
+Kata-kata: 0.028*&quot;&#39;partai&#39;,&quot; + 0.025*&quot;&#39;kerja&#39;,&quot; + 0.022*&quot;&#39;ketua&#39;,&quot; + 0.017*&quot;&#39;didik&#39;,&quot; + 0.015*&quot;&#39;program&#39;,&quot; + 0.013*&quot;&#39;dpr&#39;,&quot; + 0.012*&quot;&#39;serta&#39;,&quot; + 0.012*&quot;&#39;calon&#39;,&quot; + 0.011*&quot;&#39;menteri&#39;,&quot; + 0.011*&quot;&#39;daftar&#39;,&quot; + 0.011*&quot;&#39;oktober&#39;,&quot; + 0.011*&quot;&#39;dewan&#39;,&quot; + 0.010*&quot;&#39;guru&#39;,&quot; + 0.010*&quot;&#39;anggota&#39;,&quot; + 0.009*&quot;&#39;urus&#39;,&quot;
+
+Topik: 5
+Kata-kata: 0.049*&quot;&#39;fc&#39;,&quot; + 0.048*&quot;&#39;united&#39;,&quot; + 0.047*&quot;&#39;bandung&#39;,&quot; + 0.034*&quot;&#39;vs&#39;,&quot; + 0.032*&quot;&#39;super&#39;,&quot; + 0.024*&quot;&#39;tim&#39;,&quot; + 0.023*&quot;&#39;wib&#39;,&quot; + 0.022*&quot;&#39;agustus&#39;,&quot; + 0.019*&quot;&#39;padang&#39;,&quot; + 0.019*&quot;&#39;main&#39;,&quot; + 0.018*&quot;&#39;surabaya&#39;,&quot; + 0.018*&quot;&#39;dewa&#39;,&quot; + 0.017*&quot;&#39;pekan&#39;,&quot; + 0.016*&quot;&#39;semen&#39;,&quot; + 0.015*&quot;&#39;tanding&#39;,&quot;
 
 Topik: 2
-Kata-kata: 0.010*&quot;&#39;israel&#39;,&quot; + 0.008*&quot;&#39;negara&#39;,&quot; + 0.007*&quot;&#39;orang&#39;,&quot; + 0.007*&quot;&#39;gaza&#39;,&quot; + 0.007*&quot;&#39;jakarta&#39;,&quot; + 0.007*&quot;&#39;kota&#39;,&quot; + 0.007*&quot;&#39;jalan&#39;,&quot; + 0.007*&quot;&#39;menteri&#39;,&quot; + 0.006*&quot;&#39;gempa&#39;,&quot; + 0.006*&quot;&#39;masyarakat&#39;,&quot; + 0.006*&quot;&#39;wilayah&#39;,&quot; + 0.006*&quot;&#39;warga&#39;,&quot; + 0.006*&quot;&#39;bangun&#39;,&quot; + 0.006*&quot;&#39;oktober&#39;,&quot; + 0.006*&quot;&#39;korupsi&#39;,&quot;
+Kata-kata: 0.017*&quot;&#39;presiden&#39;,&quot; + 0.016*&quot;&#39;menteri&#39;,&quot; + 0.015*&quot;&#39;prabowo&#39;,&quot; + 0.015*&quot;&#39;polisi&#39;,&quot; + 0.014*&quot;&#39;jabat&#39;,&quot; + 0.013*&quot;&#39;nomor&#39;,&quot; + 0.013*&quot;&#39;hukum&#39;,&quot; + 0.013*&quot;&#39;pasal&#39;,&quot; + 0.012*&quot;&#39;polri&#39;,&quot; + 0.010*&quot;&#39;jakarta&#39;,&quot; + 0.010*&quot;&#39;september&#39;,&quot; + 0.009*&quot;&#39;wakil&#39;,&quot; + 0.009*&quot;&#39;surat&#39;,&quot; + 0.008*&quot;&#39;putus&#39;,&quot; + 0.008*&quot;&#39;negara&#39;,&quot;
 
-Topik: 3
-Kata-kata: 0.044*&quot;&#39;balap&#39;,&quot; + 0.038*&quot;&#39;motogp&#39;,&quot; + 0.034*&quot;&#39;marquez&#39;,&quot; + 0.020*&quot;&#39;juara&#39;,&quot; + 0.018*&quot;&#39;racing&#39;,&quot; + 0.017*&quot;&#39;ducati&#39;,&quot; + 0.017*&quot;&#39;gelar&#39;,&quot; + 0.016*&quot;&#39;bull&#39;,&quot; + 0.015*&quot;&#39;posisi&#39;,&quot; + 0.015*&quot;&#39;marc&#39;,&quot; + 0.014*&quot;&#39;sirkuit&#39;,&quot; + 0.013*&quot;&#39;dunia&#39;,&quot; + 0.012*&quot;&#39;finis&#39;,&quot; + 0.012*&quot;&#39;poin&#39;,&quot; + 0.011*&quot;&#39;menang&#39;,&quot;
+Topik: 22
+Kata-kata: 0.059*&quot;&#39;indonesia&#39;,&quot; + 0.050*&quot;&#39;u&#39;,&quot; + 0.042*&quot;&#39;main&#39;,&quot; + 0.027*&quot;&#39;latih&#39;,&quot; + 0.022*&quot;&#39;timnas&#39;,&quot; + 0.021*&quot;&#39;tim&#39;,&quot; + 0.020*&quot;&#39;piala&#39;,&quot; + 0.014*&quot;&#39;vietnam&#39;,&quot; + 0.014*&quot;&#39;muda&#39;,&quot; + 0.012*&quot;&#39;thailand&#39;,&quot; + 0.012*&quot;&#39;juara&#39;,&quot; + 0.011*&quot;&#39;garuda&#39;,&quot; + 0.009*&quot;&#39;sea&#39;,&quot; + 0.009*&quot;&#39;tanding&#39;,&quot; + 0.009*&quot;&#39;final&#39;,&quot;
+
+Topik: 16
+Kata-kata: 0.048*&quot;&#39;vs&#39;,&quot; + 0.032*&quot;&#39;babak&#39;,&quot; + 0.029*&quot;&#39;putri&#39;,&quot; + 0.029*&quot;&#39;ganda&#39;,&quot; + 0.028*&quot;&#39;open&#39;,&quot; + 0.026*&quot;&#39;kandang&#39;,&quot; + 0.026*&quot;&#39;unggul&#39;,&quot; + 0.025*&quot;&#39;kalah&#39;,&quot; + 0.023*&quot;&#39;tanding&#39;,&quot; + 0.023*&quot;&#39;wakil&#39;,&quot; + 0.022*&quot;&#39;pasang&#39;,&quot; + 0.021*&quot;&#39;indonesia&#39;,&quot; + 0.021*&quot;&#39;putra&#39;,&quot; + 0.021*&quot;&#39;skor&#39;,&quot; + 0.020*&quot;&#39;tunggal&#39;,&quot;
+
+Topik: 14
+Kata-kata: 0.051*&quot;&#39;israel&#39;,&quot; + 0.035*&quot;&#39;gaza&#39;,&quot; + 0.021*&quot;&#39;palestina&#39;,&quot; + 0.015*&quot;&#39;serang&#39;,&quot; + 0.012*&quot;&#39;menteri&#39;,&quot; + 0.012*&quot;&#39;perang&#39;,&quot; + 0.011*&quot;&#39;senjata&#39;,&quot; + 0.011*&quot;&#39;hamas&#39;,&quot; + 0.010*&quot;&#39;as&#39;,&quot; + 0.010*&quot;&#39;warga&#39;,&quot; + 0.009*&quot;&#39;militer&#39;,&quot; + 0.009*&quot;&#39;wilayah&#39;,&quot; + 0.009*&quot;&#39;tewas&#39;,&quot; + 0.008*&quot;&#39;orang&#39;,&quot; + 0.008*&quot;&#39;tahan&#39;,&quot;
+
+Topik: 8
+Kata-kata: 0.160*&quot;&#39;klub&#39;,&quot; + 0.024*&quot;&#39;putus&#39;,&quot; + 0.020*&quot;&#39;jaksa&#39;,&quot; + 0.017*&quot;&#39;hukum&#39;,&quot; + 0.016*&quot;&#39;agung&#39;,&quot; + 0.014*&quot;&#39;hakim&#39;,&quot; + 0.013*&quot;&#39;nadiem&#39;,&quot; + 0.013*&quot;&#39;mantan&#39;,&quot; + 0.013*&quot;&#39;sangka&#39;,&quot; + 0.013*&quot;&#39;aju&#39;,&quot; + 0.013*&quot;&#39;tetap&#39;,&quot; + 0.011*&quot;&#39;bukti&#39;,&quot; + 0.010*&quot;&#39;nyata&#39;,&quot; + 0.010*&quot;&#39;adil&#39;,&quot; + 0.009*&quot;&#39;tim&#39;,&quot;
 
 Topik: 4
-Kata-kata: 0.022*&quot;&#39;makan&#39;,&quot; + 0.021*&quot;&#39;mbg&#39;,&quot; + 0.020*&quot;&#39;gizi&#39;,&quot; + 0.014*&quot;&#39;racun&#39;,&quot; + 0.014*&quot;&#39;program&#39;,&quot; + 0.014*&quot;&#39;perintah&#39;,&quot; + 0.013*&quot;&#39;menteri&#39;,&quot; + 0.012*&quot;&#39;jakarta&#39;,&quot; + 0.012*&quot;&#39;kelola&#39;,&quot; + 0.012*&quot;&#39;nasional&#39;,&quot; + 0.011*&quot;&#39;oktober&#39;,&quot; + 0.010*&quot;&#39;badan&#39;,&quot; + 0.009*&quot;&#39;rapat&#39;,&quot; + 0.009*&quot;&#39;atur&#39;,&quot; + 0.009*&quot;&#39;dpr&#39;,&quot;
+Kata-kata: 0.039*&quot;&#39;indonesia&#39;,&quot; + 0.031*&quot;&#39;main&#39;,&quot; + 0.027*&quot;&#39;piala&#39;,&quot; + 0.021*&quot;&#39;timnas&#39;,&quot; + 0.019*&quot;&#39;tim&#39;,&quot; + 0.019*&quot;&#39;dunia&#39;,&quot; + 0.019*&quot;&#39;kualifikasi&#39;,&quot; + 0.017*&quot;&#39;lawan&#39;,&quot; + 0.017*&quot;&#39;laga&#39;,&quot; + 0.016*&quot;&#39;arab&#39;,&quot; + 0.015*&quot;&#39;saudi&#39;,&quot; + 0.015*&quot;&#39;tanding&#39;,&quot; + 0.014*&quot;&#39;grup&#39;,&quot; + 0.013*&quot;&#39;putar&#39;,&quot; + 0.012*&quot;&#39;lolos&#39;,&quot;
+
+Topik: 1
+Kata-kata: 0.018*&quot;&#39;tulis&#39;,&quot; + 0.013*&quot;&#39;unggah&#39;,&quot; + 0.012*&quot;&#39;film&#39;,&quot; + 0.011*&quot;&#39;kenal&#39;,&quot; + 0.010*&quot;&#39;the&#39;,&quot; + 0.010*&quot;&#39;bumn&#39;,&quot; + 0.009*&quot;&#39;nama&#39;,&quot; + 0.009*&quot;&#39;tampil&#39;,&quot; + 0.008*&quot;&#39;gemar&#39;,&quot; + 0.008*&quot;&#39;lahir&#39;,&quot; + 0.008*&quot;&#39;foto&#39;,&quot; + 0.008*&quot;&#39;dunia&#39;,&quot; + 0.007*&quot;&#39;hidup&#39;,&quot; + 0.007*&quot;&#39;terima&#39;,&quot; + 0.007*&quot;&#39;keluarga&#39;,&quot;
+
+Topik: 17
+Kata-kata: 0.097*&quot;&#39;balap&#39;,&quot; + 0.038*&quot;&#39;motogp&#39;,&quot; + 0.036*&quot;&#39;posisi&#39;,&quot; + 0.027*&quot;&#39;rusia&#39;,&quot; + 0.023*&quot;&#39;ukraina&#39;,&quot; + 0.023*&quot;&#39;sirkuit&#39;,&quot; + 0.022*&quot;&#39;detik&#39;,&quot; + 0.020*&quot;&#39;temu&#39;,&quot; + 0.018*&quot;&#39;lap&#39;,&quot; + 0.016*&quot;&#39;putin&#39;,&quot; + 0.015*&quot;&#39;sesi&#39;,&quot; + 0.013*&quot;&#39;sjafri&#39;,&quot; + 0.012*&quot;&#39;naturalisasi&#39;,&quot; + 0.012*&quot;&#39;mandalika&#39;,&quot; + 0.012*&quot;&#39;pimpin&#39;,&quot;
+
+Topik: 24
+Kata-kata: 0.024*&quot;&#39;jalan&#39;,&quot; + 0.015*&quot;&#39;kendara&#39;,&quot; + 0.013*&quot;&#39;mobil&#39;,&quot; + 0.013*&quot;&#39;terbang&#39;,&quot; + 0.011*&quot;&#39;tumpang&#39;,&quot; + 0.011*&quot;&#39;gerald&#39;,&quot; + 0.009*&quot;&#39;milik&#39;,&quot; + 0.009*&quot;&#39;lampu&#39;,&quot; + 0.008*&quot;&#39;kondisi&#39;,&quot; + 0.008*&quot;&#39;layan&#39;,&quot; + 0.008*&quot;&#39;bandara&#39;,&quot; + 0.007*&quot;&#39;atur&#39;,&quot; + 0.007*&quot;&#39;guna&#39;,&quot; + 0.007*&quot;&#39;pesawat&#39;,&quot; + 0.006*&quot;&#39;sistem&#39;,&quot;
+
+Topik: 13
+Kata-kata: 0.047*&quot;&#39;gol&#39;,&quot; + 0.039*&quot;&#39;main&#39;,&quot; + 0.031*&quot;&#39;menit&#39;,&quot; + 0.030*&quot;&#39;laga&#39;,&quot; + 0.025*&quot;&#39;tanding&#39;,&quot; + 0.022*&quot;&#39;menang&#39;,&quot; + 0.021*&quot;&#39;cetak&#39;,&quot; + 0.015*&quot;&#39;tim&#39;,&quot; + 0.015*&quot;&#39;bola&#39;,&quot; + 0.015*&quot;&#39;tahan&#39;,&quot; + 0.014*&quot;&#39;serang&#39;,&quot; + 0.014*&quot;&#39;hasil&#39;,&quot; + 0.013*&quot;&#39;kalah&#39;,&quot; + 0.012*&quot;&#39;skor&#39;,&quot; + 0.012*&quot;&#39;poin&#39;,&quot;
+
+Topik: 28
+Kata-kata: 0.023*&quot;&#39;wilayah&#39;,&quot; + 0.021*&quot;&#39;hujan&#39;,&quot; + 0.019*&quot;&#39;kabupaten&#39;,&quot; + 0.018*&quot;&#39;jakarta&#39;,&quot; + 0.018*&quot;&#39;kota&#39;,&quot; + 0.014*&quot;&#39;barat&#39;,&quot; + 0.012*&quot;&#39;bmkg&#39;,&quot; + 0.011*&quot;&#39;wib&#39;,&quot; + 0.010*&quot;&#39;selatan&#39;,&quot; + 0.009*&quot;&#39;potensi&#39;,&quot; + 0.009*&quot;&#39;jawa&#39;,&quot; + 0.008*&quot;&#39;bogor&#39;,&quot; + 0.008*&quot;&#39;tangerang&#39;,&quot; + 0.008*&quot;&#39;cuaca&#39;,&quot; + 0.007*&quot;&#39;air&#39;,&quot;
+
+Topik: 23
+Kata-kata: 0.032*&quot;&#39;mbg&#39;,&quot; + 0.024*&quot;&#39;gizi&#39;,&quot; + 0.023*&quot;&#39;haji&#39;,&quot; + 0.020*&quot;&#39;racun&#39;,&quot; + 0.019*&quot;&#39;program&#39;,&quot; + 0.019*&quot;&#39;makan&#39;,&quot; + 0.016*&quot;&#39;kuota&#39;,&quot; + 0.014*&quot;&#39;menteri&#39;,&quot; + 0.013*&quot;&#39;perintah&#39;,&quot; + 0.012*&quot;&#39;sppg&#39;,&quot; + 0.011*&quot;&#39;september&#39;,&quot; + 0.011*&quot;&#39;dapur&#39;,&quot; + 0.010*&quot;&#39;bgn&#39;,&quot; + 0.010*&quot;&#39;gratis&#39;,&quot; + 0.009*&quot;&#39;kpk&#39;,&quot;
+
+Topik: 0
+Kata-kata: 0.048*&quot;&#39;laut&#39;,&quot; + 0.032*&quot;&#39;barat&#39;,&quot; + 0.030*&quot;&#39;pulau&#39;,&quot; + 0.026*&quot;&#39;jawa&#39;,&quot; + 0.024*&quot;&#39;selatan&#39;,&quot; + 0.021*&quot;&#39;utara&#39;,&quot; + 0.020*&quot;&#39;papua&#39;,&quot; + 0.020*&quot;&#39;timur&#39;,&quot; + 0.020*&quot;&#39;gelombang&#39;,&quot; + 0.018*&quot;&#39;wilayah&#39;,&quot; + 0.017*&quot;&#39;angin&#39;,&quot; + 0.016*&quot;&#39;kapal&#39;,&quot; + 0.016*&quot;&#39;samudra&#39;,&quot; + 0.014*&quot;&#39;meter&#39;,&quot; + 0.013*&quot;&#39;cepat&#39;,&quot;
+
+Topik: 19
+Kata-kata: 0.013*&quot;&#39;kapal&#39;,&quot; + 0.013*&quot;&#39;video&#39;,&quot; + 0.010*&quot;&#39;aksi&#39;,&quot; + 0.009*&quot;&#39;raya&#39;,&quot; + 0.008*&quot;&#39;acara&#39;,&quot; + 0.008*&quot;&#39;nepal&#39;,&quot; + 0.008*&quot;&#39;gelar&#39;,&quot; + 0.008*&quot;&#39;bruno&#39;,&quot; + 0.008*&quot;&#39;unjuk&#39;,&quot; + 0.007*&quot;&#39;eduardo&#39;,&quot; + 0.007*&quot;&#39;jalan&#39;,&quot; + 0.007*&quot;&#39;merdeka&#39;,&quot; + 0.007*&quot;&#39;bendera&#39;,&quot; + 0.007*&quot;&#39;sosial&#39;,&quot; + 0.007*&quot;&#39;hadir&#39;,&quot;
+
+Topik: 12
+Kata-kata: 0.025*&quot;&#39;mobil&#39;,&quot; + 0.024*&quot;&#39;listrik&#39;,&quot; + 0.022*&quot;&#39;motor&#39;,&quot; + 0.021*&quot;&#39;kendara&#39;,&quot; + 0.019*&quot;&#39;indonesia&#39;,&quot; + 0.018*&quot;&#39;rp&#39;,&quot; + 0.014*&quot;&#39;harga&#39;,&quot; + 0.013*&quot;&#39;unit&#39;,&quot; + 0.013*&quot;&#39;jual&#39;,&quot; + 0.012*&quot;&#39;juta&#39;,&quot; + 0.010*&quot;&#39;baterai&#39;,&quot; + 0.010*&quot;&#39;gabung&#39;,&quot; + 0.009*&quot;&#39;diskus&#39;,&quot; + 0.009*&quot;&#39;grup&#39;,&quot; + 0.009*&quot;&#39;artikel&#39;,&quot;
 
 Ekstraksi fitur LDA selesai.
-Bentuk matriks fitur (X): (360, 5)
+Bentuk matriks fitur (X): (9000, 30)
 </pre></div>
 </div>
 </div>
@@ -669,38 +718,30 @@ Bentuk matriks fitur (X): (360, 5)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data dibagi. Jumlah data latih: 288, Jumlah data uji: 72
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data dibagi. Jumlah data latih: 7200, Jumlah data uji: 1800
 
 --- Memulai pelatihan model SVM... ---
 Pelatihan selesai.
 
 --- HASIL EVALUASI AKHIR ---
-Akurasi Model: 50.00%
+Akurasi Model: 77.17%
 
 Laporan Klasifikasi (Classification Report):
                precision    recall  f1-score   support
 
-      ekonomi       0.55      0.75      0.63         8
-      hiburan       0.00      0.00      0.00         8
-        hukum       0.00      0.00      0.00         8
-internasional       0.33      0.88      0.48         8
-   lingkungan       0.00      0.00      0.00         8
-     olahraga       1.00      0.25      0.40         8
-     otomotif       0.64      0.88      0.74         8
-      politik       0.67      0.75      0.71         8
-    sepakbola       0.80      1.00      0.89         8
+      ekonomi       0.77      0.59      0.67       200
+      hiburan       0.73      0.81      0.76       200
+        hukum       0.76      0.80      0.78       200
+internasional       0.80      0.85      0.83       200
+   lingkungan       0.77      0.72      0.75       200
+     olahraga       0.89      0.59      0.71       200
+     otomotif       0.87      0.96      0.92       200
+      politik       0.63      0.70      0.67       200
+    sepakbola       0.76      0.92      0.83       200
 
-     accuracy                           0.50        72
-    macro avg       0.44      0.50      0.43        72
- weighted avg       0.44      0.50      0.43        72
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
-/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
-/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
+     accuracy                           0.77      1800
+    macro avg       0.78      0.77      0.77      1800
+ weighted avg       0.78      0.77      0.77      1800
 </pre></div>
 </div>
 </div>
@@ -766,7 +807,7 @@ internasional       0.33      0.88      0.48         8
   colors = cm.get_cmap(&quot;Spectral&quot;, len(labels))
 </pre></div>
 </div>
-<img alt="_images/a1eb9ab952ef047a20cd520af133f9acbb19981d5ab90668f80dc621cbc38add.png" src="_images/a1eb9ab952ef047a20cd520af133f9acbb19981d5ab90668f80dc621cbc38add.png" />
+<img alt="_images/dc65b5d3ab1fbda4f6765ad8cf2c197b45adc3996fc35b07b23d1b8a8306d8f3.png" src="_images/dc65b5d3ab1fbda4f6765ad8cf2c197b45adc3996fc35b07b23d1b8a8306d8f3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Selesai ---
 </pre></div>
 </div>
