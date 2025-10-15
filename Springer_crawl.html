@@ -189,6 +189,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Preprocessing.html">Preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ekstraksi_fitur.html">Ekstraksi Fitur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA Klasifikasi Berita</a></li>
 </ul>
 
     </div>
@@ -398,7 +399,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sprynger in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (0.4.1)
 Requirement already satisfied: lxml in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (from sprynger) (6.0.1)
 Requirement already satisfied: requests in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (from sprynger) (2.32.5)
-Requirement already satisfied: urllib3 in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (from sprynger) (2.5.0)
+Requirement already satisfied: urllib3 in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (from sprynger) (1.26.20)
 Requirement already satisfied: platformdirs in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (from sprynger) (4.3.8)
 Requirement already satisfied: tomli&gt;=1.2.3 in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (from sprynger) (2.2.1)
 Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages (from requests-&gt;sprynger) (3.4.3)
@@ -503,16 +504,100 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Silahkan membuat api key dari https://dev.springernature.com/#api</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;8bd578e4f19c2e9b1397f546bf3a9aa8&quot;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total hasil: 320938
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+Result 1:
+DOI: 10.1007/s44174-025-00279-4
+Title: Exploring Multimodal Framework of Optimized Feature-Based Machine Learning to Revolutionize the Diagnosis of Parkinson’s Disease: AI-Driven Insights
+Publication Date: 2026-03-01
+Content Type: Article
+Authors: Khanom, Fahmida, Mostafiz, Rafid, Uddin, Khandaker Mohammad Mohi
+Abstract: Parkinson’s disease (PD), a progressive neurodegenerative disorder, poses significant challenges to healthcare systems worldwide due to its increasing prevalence and need for early detection to improve patient outcomes. This study introduces a robust diagnostic framework leveraging a multimodal feat...
+--------------------------------------------------------------------------------
+
+Result 2:
+DOI: 10.1007/s44174-025-00308-2
+Title: Development of Toughened Poly (lactic acid) by Melt Blending with Poly (butylene adipate-co-terephthalate) Using Epoxidized Castor Oil as a Compatibilizer for Biomedical Applications
+Publication Date: 2026-03-01
+Content Type: Article
+Authors: Ajeya, K. P., Naveen, Y. P., Vishnu, K. T., Gowda, G. S. Kariyappa, Anush, S. M., Amita, K., Prashantha, K.
+Abstract: Poly (lactic acid) (PLA) is a bioderived and biodegradable thermoplastic widely used in various applications; however, its brittleness limits its mechanical performance. To address this issue, this study develops fully biodegradable PLA/Poly (butylene adipate-co-terephthalate) (PBAT) blends compatib...
+--------------------------------------------------------------------------------
+
+Result 3:
+DOI: 10.1007/978-3-031-98238-5_1
+Title: Introduction
+Publication Date: 2026-01-01
+Content Type: Chapter
+Authors: Jarvis, Charlotte
+Abstract: Underwater cultural heritage (UCH) is integral to both cultural heritage and natural heritage, thus making it a shared Ocean Heritage . The stories of our societies and our ancestors are wrapped in intangible connections with the ocean and preserved on the seafloor as artefacts, shipwrecks, and rema...
+--------------------------------------------------------------------------------
+
+Result 4:
+DOI: 10.1007/978-3-032-00983-8_5
+Title: Survey on Data Mining and Machine Learning Methods Used in Analyzing Tweets
+Publication Date: 2026-01-01
+Content Type: Chapter ConferencePaper
+Authors: Sadasivuni, Sudha Tushara, Sadasivuni, Sudarsan
+Abstract: It is observed that the Mental illness by the actions and individual emotions and expressions towards a particular situation. It indicates that American Psychiatric Association that has 19% of people experience mental illness. Nearly 4.1% of people [ 1 ] are seriously affected by mental illness. In ...
+--------------------------------------------------------------------------------
+
+Result 5:
+DOI: 10.1007/978-3-032-00979-1_2
+Title: Underlying Concepts and Technologies
+Publication Date: 2026-01-01
+Content Type: Chapter
+Authors: Van Hijfte, Stijn
+Abstract: To understand blockchain and distributed ledger solutions, one should also understand the underlying technologies and concepts that make up, or at least have influenced, the creation of blockchain technology. Only that way we can hope to understand how the idea of Bitcoin and blockchain saw the ligh...
+--------------------------------------------------------------------------------
+
+Result 6:
+DOI: 10.1007/978-3-032-03028-3_1
+Title: A Subjective Pattern Mining Literature Survey
+Publication Date: 2026-01-01
+Content Type: Chapter
+Authors: Boulicaut, Jean-François, Plantevit, Marc, Robardet, Céline
+Abstract: This survey paper covers about three decades of research on pattern discovery. We consider some of the major breakthroughs about constraint-based data mining and several nice results about interesting pattern set discovery. We then focus on recent approaches for a cross-fertilization between pattern...
+--------------------------------------------------------------------------------
+
+Result 7:
+DOI: 10.1007/978-3-031-96328-5_11
+Title: Internet of Medical Things Focused on Home Hospitalization for Diagnostic and Monitoring Support
+Publication Date: 2026-01-01
+Content Type: Chapter
+Authors: Ramirez Lopez, Leonardo Juan, Jaimes Salazar, Norman Eduardo, Duarte Suarez, Julian Andres
+Abstract: This chapter explores the use of the Internet of Medical Things (IoMT) to support remote diagnosis and monitoring in the biomedical domain, highlighting its ability to facilitate real-time analysis of clinical data. Although the DATALOG project, presented as a case study, is focused on the developme...
+--------------------------------------------------------------------------------
+
+Result 8:
+DOI: 10.1007/978-3-031-98238-5_8
+Title: Moana Matters: Culture and Deep Sea Mining in Oceania
+Publication Date: 2026-01-01
+Content Type: Chapter
+Authors: Huffer, Elise, Hill-Lewenilovo, Renee
+Abstract: Cultural connectivity has been a marker of Oceania since time immemorial. Islands were fished out of the water by ancestral demi-gods; sea routes were mapped and shared with kindred animals; currents, winds, and stars were felt, breathed in, and drawn in sand and in minds. Sharks, dolphins, and turt...
+--------------------------------------------------------------------------------
+
+Result 9:
+DOI: 10.1007/978-3-031-93802-3_7
+Title: Unveiling Power Laws in Graph Mining: Techniques and Applications in Graph Query Analysis
+Publication Date: 2026-01-01
+Content Type: Chapter
+Authors: Adiyattil, Rini, Thangamayan, S., Aswathy Prakash, G.
+Abstract: Power laws play a crucial role in understanding the structural and functional properties of real-world graphs, influencing various aspects of graph mining and query processing. This paper explores the prevalence of power-law distributions in large-scale graph structures and their implications for gr...
+--------------------------------------------------------------------------------
+
+Result 10:
+DOI: 10.1007/978-3-032-07336-5_14
+Title: Process Mining for Databases Forensic Investigations: Detecting Suspicious Transactions
+Publication Date: 2026-01-01
+Content Type: Chapter ConferencePaper
+Authors: Abu-assi, Mohamed S., Essameldin, Reem, Darwish, Saad M., Saleh, Safaa
+Abstract: Process mining is an advanced technological field offering transformative solutions for data-driven process analysis, and in this context, digital forensics for databases emerges as an increasingly important domain benefiting from process mining techniques in modern digital forensic investigations. ...
+--------------------------------------------------------------------------------
+
+✅ Data berhasil disimpan ke: springer_web_mining_20251015_064313.csv
+📊 Jumlah record yang disimpan: 10
 </pre></div>
 </div>
 </div>
@@ -611,9 +696,27 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total hasil: 90635
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total hasil: 91971
 
 Result 1:
+DOI: 10.1007/s44174-025-00279-4
+Title: Exploring Multimodal Framework of Optimized Feature-Based Machine Learning to Revolutionize the Diagnosis of Parkinson’s Disease: AI-Driven Insights
+Publication Date: 2026-03-01
+Content Type: Article
+Authors: Khanom, Fahmida, Mostafiz, Rafid, Uddin, Khandaker Mohammad Mohi
+Abstract: Parkinson’s disease (PD), a progressive neurodegenerative disorder, poses significant challenges to healthcare systems worldwide due to its increasing prevalence and need for early detection to improve patient outcomes. This study introduces a robust diagnostic framework leveraging a multimodal feat...
+--------------------------------------------------------------------------------
+
+Result 2:
+DOI: 10.1007/s44174-025-00308-2
+Title: Development of Toughened Poly (lactic acid) by Melt Blending with Poly (butylene adipate-co-terephthalate) Using Epoxidized Castor Oil as a Compatibilizer for Biomedical Applications
+Publication Date: 2026-03-01
+Content Type: Article
+Authors: Ajeya, K. P., Naveen, Y. P., Vishnu, K. T., Gowda, G. S. Kariyappa, Anush, S. M., Amita, K., Prashantha, K.
+Abstract: Poly (lactic acid) (PLA) is a bioderived and biodegradable thermoplastic widely used in various applications; however, its brittleness limits its mechanical performance. To address this issue, this study develops fully biodegradable PLA/Poly (butylene adipate-co-terephthalate) (PBAT) blends compatib...
+--------------------------------------------------------------------------------
+
+Result 3:
 DOI: 10.1007/978-3-031-90470-7_6
 Title: ‘Internet of Things’ and ‘Social Networking’: Containment
 Publication Date: 2026-01-01
@@ -622,7 +725,7 @@ Authors: Gupta, Suman
 Abstract: Moving to the post-2000 period, or the post-formation Internet Polity, this chapter begins with the implications of the internet becoming the centred repository of sources, medium of investigation, and object in historicist accounts of recent and contemporary events. Debates on ‘technological determ...
 --------------------------------------------------------------------------------
 
-Result 2:
+Result 4:
 DOI: 10.1007/978-3-032-00983-8_5
 Title: Survey on Data Mining and Machine Learning Methods Used in Analyzing Tweets
 Publication Date: 2026-01-01
@@ -631,79 +734,61 @@ Authors: Sadasivuni, Sudha Tushara, Sadasivuni, Sudarsan
 Abstract: It is observed that the Mental illness by the actions and individual emotions and expressions towards a particular situation. It indicates that American Psychiatric Association that has 19% of people experience mental illness. Nearly 4.1% of people [ 1 ] are seriously affected by mental illness. In ...
 --------------------------------------------------------------------------------
 
-Result 3:
-DOI: 10.1007/978-3-031-93802-3_7
-Title: Unveiling Power Laws in Graph Mining: Techniques and Applications in Graph Query Analysis
-Publication Date: 2026-01-01
-Content Type: Chapter
-Authors: Adiyattil, Rini, Thangamayan, S., Aswathy Prakash, G.
-Abstract: Power laws play a crucial role in understanding the structural and functional properties of real-world graphs, influencing various aspects of graph mining and query processing. This paper explores the prevalence of power-law distributions in large-scale graph structures and their implications for gr...
---------------------------------------------------------------------------------
-
-Result 4:
-DOI: 10.1007/978-3-032-02215-8_7
-Title: An Enhanced FP-Growth Algorithm with Hybrid Adaptive Support Threshold for Association Rule Mining
-Publication Date: 2026-01-01
-Content Type: Chapter ConferencePaper
-Authors: Saikaew, Kanda Runapongsa, Leung, Carson K., Phiwhorm, Kritbodin
-Abstract: Finding frequent itemsets remains challenging due to manual threshold specification requirements in existing algorithms. This paper presents an Enhanced FP-Growth algorithm incorporating a hybrid adaptive support threshold that combines statistical variance analysis, frequency distribution patterns,...
---------------------------------------------------------------------------------
-
 Result 5:
-DOI: 10.1007/978-3-031-93257-1_6
-Title: Adaptive Web API Recommendation via Matching Service Clusters and Mashup Requirement
+DOI: 10.1007/978-3-032-07336-5_14
+Title: Process Mining for Databases Forensic Investigations: Detecting Suspicious Transactions
 Publication Date: 2026-01-01
 Content Type: Chapter ConferencePaper
-Authors: Zhu, Yue, Zou, Guobing, Yang, Song, Hu, Shengxiang, Li, Pengtao, Zeng, Chunhua
-Abstract: With the rapid proliferation of Web services and Web APIs, recommendation systems can effectively address the issue of information overload and alleviate the burden of meaningless filtering. Existing approaches can help filtering appropriate Web services for mashup creation, however, they often fall...
+Authors: Abu-assi, Mohamed S., Essameldin, Reem, Darwish, Saad M., Saleh, Safaa
+Abstract: Process mining is an advanced technological field offering transformative solutions for data-driven process analysis, and in this context, digital forensics for databases emerges as an increasingly important domain benefiting from process mining techniques in modern digital forensic investigations. ...
 --------------------------------------------------------------------------------
 
 Result 6:
-DOI: 10.1007/978-3-032-02088-8_29
-Title: Benchmarking Embedding Techniques for Modeling User Navigation Behavior on Task-Oriented Software
+DOI: 10.1007/978-3-032-07313-6_6
+Title: Large Language Models for Service-Oriented Computing (LLM4SOC): Review and Research Directions
 Publication Date: 2026-01-01
 Content Type: Chapter ConferencePaper
-Authors: Boukharouba, Ikram, Sèdes, Florence, Verhaeghe, Benoit, Bortolaso, Christophe
-Abstract: Understanding user navigation patterns from clickstream data is crucial for improving business software, yet remains challenging due to the complexity and variability of real-world environments. Unlike controlled settings, real-world clickstreams are noisy, fragmented, and often incomplete, due to s...
+Authors: Kumara, Indika, Kaplan, Hasan, Owotogbe, Joshua, Tamburri, Damian Andrew, Heuvel, Willem-Jan
+Abstract: Large Language Models (LLMs) have become increasingly popular in academia and industry due to their ability to comprehend natural language and generate content to perform various tasks. Numerous studies suggested that service-oriented computing (SOC), a key computing paradigm for building distribute...
 --------------------------------------------------------------------------------
 
 Result 7:
-DOI: 10.1007/978-3-032-01723-9_9
-Title: Analyzing Water Consumption Patterns in Mexico City: A GIS and Data Science Approach
+DOI: 10.1007/978-3-032-03028-3_1
+Title: A Subjective Pattern Mining Literature Survey
 Publication Date: 2026-01-01
-Content Type: Chapter ConferencePaper
-Authors: Hernández-Vázquez, Israel, Luna-Sánchez, Antonio Jonathan, Hurtado-Perez, Arturo Benjamin, Claramunt, Christophe, Zagal-Flores, Roberto, Mata, Felix
-Abstract: Water scarcity in Mexico City has become an increasingly urgent issue, exacerbated by inefficient and unequal consumption patterns across its urban fabric. This study advances Geographic Information Systems (GIS) research by developing and applying an integrative spatial analysis framework specifica...
+Content Type: Chapter
+Authors: Boulicaut, Jean-François, Plantevit, Marc, Robardet, Céline
+Abstract: This survey paper covers about three decades of research on pattern discovery. We consider some of the major breakthroughs about constraint-based data mining and several nice results about interesting pattern set discovery. We then focus on recent approaches for a cross-fertilization between pattern...
 --------------------------------------------------------------------------------
 
 Result 8:
-DOI: 10.1007/978-981-96-6951-6_19
-Title: Research on Sensor Behavioral Psychological Health Based on Multi-task Learning
+DOI: 10.1007/978-3-032-00979-1_2
+Title: Underlying Concepts and Technologies
 Publication Date: 2026-01-01
-Content Type: Chapter ConferencePaper
-Authors: Pang, Lulu, Wang, Xianrong, Li, Hua, Wu, Wangyu
-Abstract: As society develops, mental health is becoming increasingly important. Traditional mental health assessment methods, such as face-to-face interviews and observational techniques, are limited by several factors, including subjectivity, response delays, and high costs. To address these issues, recent ...
+Content Type: Chapter
+Authors: Van Hijfte, Stijn
+Abstract: To understand blockchain and distributed ledger solutions, one should also understand the underlying technologies and concepts that make up, or at least have influenced, the creation of blockchain technology. Only that way we can hope to understand how the idea of Bitcoin and blockchain saw the ligh...
 --------------------------------------------------------------------------------
 
 Result 9:
-DOI: 10.1007/978-3-031-89518-0_1
-Title: On the Centrality of Web Trackers: Assessing Its Potential for Automated Detection
+DOI: 10.1007/978-3-032-00979-1_3
+Title: Bitcoin
 Publication Date: 2026-01-01
-Content Type: Chapter ConferencePaper
-Authors: Raschke, Philip, Herbke, Patrick, Schwerdtner, Henry
-Abstract: For the past 20 years, web tracking has raised worries among privacy advocates and authorities responsible for data protection. Researchers have proposed several machine learning-driven remedies to identify Web trackers in an automated manner. While those have displayed potential, they have primaril...
+Content Type: Chapter
+Authors: Van Hijfte, Stijn
+Abstract: From all cryptocurrencies and blockchain networks, Bitcoin was the first and arguably to this day the most famous of them all. It was the first coin that based itself not on a banking system, a centralized government and/or a payment system but is in fact completely decentralized. The network is com...
 --------------------------------------------------------------------------------
 
 Result 10:
-DOI: 10.1007/978-3-032-02215-8_6
-Title: FNoDe: Faulty Node Detection in Microservices Architecture
+DOI: 10.1007/978-3-031-96328-5_11
+Title: Internet of Medical Things Focused on Home Hospitalization for Diagnostic and Monitoring Support
 Publication Date: 2026-01-01
-Content Type: Chapter ConferencePaper
-Authors: Borse, Harsh, Satpathy, Utkalika, Mondal, Mainack, Mitra, Bivas
-Abstract: As cloud services shift from monolithic architectures to microservices, post-failure fault and anomaly detection becomes increasingly challenging due to cascading effects across interdependent services and the overwhelming volume of heterogeneous logs and metrics. We propose FNoDe (Faulty Node Detec...
+Content Type: Chapter
+Authors: Ramirez Lopez, Leonardo Juan, Jaimes Salazar, Norman Eduardo, Duarte Suarez, Julian Andres
+Abstract: This chapter explores the use of the Internet of Medical Things (IoMT) to support remote diagnosis and monitoring in the biomedical domain, highlighting its ability to facilitate real-time analysis of clinical data. Although the DATALOG project, presented as a case study, is focused on the developme...
 --------------------------------------------------------------------------------
 
-✅ Data berhasil disimpan ke: springer_web_usage_mining_20250828_071521.csv
+✅ Data berhasil disimpan ke: springer_web_usage_mining_20251015_064315.csv
 📊 Jumlah record yang disimpan: 10
 </pre></div>
 </div>
