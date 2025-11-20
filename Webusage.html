@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Web Usage &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Webusage';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Page Rank" href="Pagerank.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    <img src="_static/profpic.jpg" alt="profile-picture" srcset="">
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Materi.html">Pengembangan Materi Pencarian &amp; Penambangan Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Springer_crawl.html">Crawling Springer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PTA_crawl.html">Crawling Web</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Preprocessing.html">Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ekstraksi_fitur.html">Ekstraksi Fitur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA Klasifikasi Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">UTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pagerank.html">Page Rank</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Web Usage</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FWebusage.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Webusage.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Web Usage</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="web-usage">
+<h1>Web Usage<a class="headerlink" href="#web-usage" title="Link to this heading">#</a></h1>
+<p>Data log web yang digunakan pada code ini adalah data NASA.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="c1"># --- Ganti &#39;path/ke/file_log_anda.csv&#39; dengan lokasi file Anda ---</span>
+<span class="n">log_file_path</span> <span class="o">=</span> <span class="s1">&#39;NASA_Jul95_cleaned.csv&#39;</span>
+<span class="c1"># -----------------------------------------------------------------</span>
+
+<span class="c1"># Tentukan batas waktu sesi</span>
+<span class="n">SESSION_TIMEOUT</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Daftar ekstensi file aset yang akan difilter (dibuang)</span>
+<span class="n">ASSET_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;.css&#39;</span><span class="p">,</span> <span class="s1">&#39;.js&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;.gif&#39;</span><span class="p">,</span> <span class="s1">&#39;.ico&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;.svg&#39;</span><span class="p">,</span> <span class="s1">&#39;.woff&#39;</span><span class="p">,</span> <span class="s1">&#39;.woff2&#39;</span><span class="p">,</span> <span class="s1">&#39;.ttf&#39;</span><span class="p">,</span> <span class="s1">&#39;.eot&#39;</span><span class="p">,</span> <span class="s1">&#39;.zip&#39;</span>
+<span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="c1">## 1. TAHAP PREPROCESSING (Pembersihan dan Filter Data)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Membaca log dari </span><span class="si">{</span><span class="n">log_file_path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+    <span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;IP&#39;</span><span class="p">,</span> <span class="s1">&#39;Logname&#39;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;Method&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;URI&#39;</span><span class="p">,</span> <span class="s1">&#39;Protocol&#39;</span><span class="p">,</span> <span class="s1">&#39;Status&#39;</span><span class="p">,</span> <span class="s1">&#39;Size&#39;</span>
+    <span class="p">]</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Initialize df to None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+            <span class="n">log_file_path</span><span class="p">,</span>
+            <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">col_names</span><span class="p">,</span>
+            <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="n">on_bad_lines</span><span class="o">=</span><span class="s1">&#39;skip&#39;</span><span class="p">,</span> <span class="c1"># Keep on_bad_lines</span>
+            <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span> <span class="c1"># Added engine=&#39;python&#39; for more robust parsing</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: File tidak ditemukan di </span><span class="si">{</span><span class="n">log_file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="c1"># Use return instead of exit() for Colab compatibility</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error saat membaca file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="c1"># Use return instead of exit() for Colab compatibility</span>
+
+    <span class="c1"># Check if df was successfully loaded before proceeding</span>
+    <span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataframe could not be loaded. Stopping execution.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pratinjau data mentah berhasil dibaca.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="c1"># --- TAMBAHAN: INFORMASI STATISTIK DATA MENTAH ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📊 Jumlah baris data mentah (Awal): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 1. Cek Top User (IP paling sering muncul)</span>
+    <span class="n">ip_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;IP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🏆 Top 10 IP dengan akses terbanyak:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ip_counts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="c1"># 2. Cek Jumlah IP Duplikat (Muncul &gt; 1 kali)</span>
+    <span class="n">dupe_ips</span> <span class="o">=</span> <span class="n">ip_counts</span><span class="p">[</span><span class="n">ip_counts</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">⚠️ Jumlah Unik IP: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ip_counts</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ Jumlah IP yang &#39;Duplikat&#39; (akses &gt; 1 kali): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dupe_ips</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="c1"># --- TAMBAHAN: INFORMASI NILAI NAN ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🔍 Mengecek nilai NaN dalam dataset mentah...&quot;</span><span class="p">)</span>
+    <span class="n">nan_counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">nan_percentages</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">nan_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;NaN Count&#39;</span><span class="p">:</span> <span class="n">nan_counts</span><span class="p">,</span> <span class="s1">&#39;NaN Percentage&#39;</span><span class="p">:</span> <span class="n">nan_percentages</span><span class="p">})</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nan_info</span><span class="p">[</span><span class="n">nan_info</span><span class="p">[</span><span class="s1">&#39;NaN Count&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span> <span class="c1"># Hanya tampilkan kolom dengan NaN</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total NaN values in raw data:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Memulai preprocessing (filter GET, 200, dan aset)...&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 1. Filter: Hanya ambil Request Method &#39;GET&#39;</span>
+    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Method&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># 2. Filter: Hanya ambil Status &#39;200&#39; (OK)</span>
+    <span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;Status&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;Status&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Status&#39;</span><span class="p">])</span>
+    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;Status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># 3. Filter: &quot;filter html&quot; (buang file aset)</span>
+    <span class="n">lower_uri</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;URI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="c1"># is_asset = lower_uri.apply(lambda x: any(x.endswith(ext) for ext in ASSET_EXTENSIONS))</span>
+    <span class="c1"># # &#39;df_clean&#39; sekarang berisi data bersih DENGAN SEMUA KOLOM ASLI</span>
+    <span class="c1"># df_clean = df_filtered[~is_asset].copy()</span>
+
+    <span class="c1"># Langsung ambil baris yang URI-nya berakhiran &#39;.html&#39;</span>
+    <span class="c1"># Perbaikan: Gunakan df_filtered dan pastikan tidak ada NaN di kolom URI sebelum filter</span>
+    <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;URI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.html&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Konversi kolom &#39;Time&#39; ke format datetime</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mengonversi waktu (dengan format ISO8601)...&quot;</span><span class="p">)</span>
+    <span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;ISO8601&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data setelah preprocessing (sebelum pengelompokan sesi):&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="c1"># --- TAMBAHAN: INFORMASI SETELAH FILTERING ---</span>
+    <span class="n">jumlah_awal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">jumlah_akhir</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_clean</span><span class="p">)</span>
+    <span class="n">jumlah_dibuang</span> <span class="o">=</span> <span class="n">jumlah_awal</span> <span class="o">-</span> <span class="n">jumlah_akhir</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Jumlah data setelah diproses (df_clean): </span><span class="si">{</span><span class="n">jumlah_akhir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🗑️ Jumlah data &#39;sampah&#39; (aset/error) yang dibuang: </span><span class="si">{</span><span class="n">jumlah_dibuang</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📉 Persentase penyusutan data: </span><span class="si">{</span><span class="p">(</span><span class="n">jumlah_dibuang</span><span class="o">/</span><span class="n">jumlah_awal</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+
+    <span class="c1">## 2. TAHAP IDENTIFIKASI SESI (Sessionization)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mengelompokkan sesi (timeout: </span><span class="si">{</span><span class="n">SESSION_TIMEOUT</span><span class="si">}</span><span class="s2">)...&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Urutkan data (PENTING)</span>
+    <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;IP&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Hitung selisih waktu</span>
+    <span class="n">time_diff</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;IP&#39;</span><span class="p">)[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+    <span class="n">is_new_session</span> <span class="o">=</span> <span class="p">(</span><span class="n">time_diff</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span> <span class="o">|</span> <span class="p">(</span><span class="n">time_diff</span> <span class="o">&gt;</span> <span class="n">SESSION_TIMEOUT</span><span class="p">)</span>
+
+    <span class="c1"># Buat kolom SessionID langsung di &#39;df_clean&#39;</span>
+    <span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;SessionID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">is_new_session</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+    <span class="c1"># --- OUTPUT BARU ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- PRATINJAU LOG DENGAN SESI ---&quot;</span><span class="p">)</span>
+    <span class="c1"># Menampilkan kolom-kolom yang relevan</span>
+    <span class="n">cols_to_show</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SessionID&#39;</span><span class="p">,</span> <span class="s1">&#39;IP&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;URI&#39;</span><span class="p">,</span> <span class="s1">&#39;Status&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">cols_to_show</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="c1"># Menyimpan file log yang sudah dikelompokkan</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">df_clean</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;hasil_log_dengan_sesiNASA.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data log yang sudah dikelompokkan disimpan ke &#39;hasil_log_dengan_sesiNASA.csv&#39;&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gagal menyimpan file &#39;hasil_log_dengan_sesiNASA.csv&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># ----------------------------------------------</span>
+
+
+    <span class="c1">## 3. TAHAP PENYUSUNAN MATRIKS (Data Structuring)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Membuat matriks Sesi x Halaman...&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Kita menggunakan &#39;df_clean&#39; yang sekarang sudah punya SessionID</span>
+    <span class="n">matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;SessionID&#39;</span><span class="p">],</span> <span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;IP&#39;</span><span class="p">]],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;URI&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">matrix_binary</span> <span class="o">=</span> <span class="p">(</span><span class="n">matrix</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">final_output</span> <span class="o">=</span> <span class="n">matrix_binary</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;SessionID&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- HASIL AKHIR (MATRIKS) ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">final_output</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+
+    <span class="c1"># Menyimpan file matriks</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">final_output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;hasil_matriks_sesiNASA.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks hasil juga disimpan ke &#39;hasil_matriks_sesiNASA.csv&#39;&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gagal menyimpan file &#39;hasil_matriks_sesiNASA.csv&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Membaca log dari NASA_Jul95_cleaned.csv...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pratinjau data mentah berhasil dibaca.
+--------------------------------------------------
+📊 Jumlah baris data mentah (Awal): 1891714
+
+🏆 Top 10 IP dengan akses terbanyak:
+IP
+piweba3y.prodigy.com    17572
+piweba4y.prodigy.com    11591
+piweba1y.prodigy.com     9868
+alyssa.prodigy.com       7852
+siltb10.orl.mmc.com      7573
+piweba2y.prodigy.com     5922
+edams.ksc.nasa.gov       5434
+163.206.89.4             4906
+news.ti.com              4863
+disarray.demon.co.uk     4353
+Name: count, dtype: int64
+
+⚠️ Jumlah Unik IP: 81982
+⚠️ Jumlah IP yang &#39;Duplikat&#39; (akses &gt; 1 kali): 76282
+--------------------------------------------------
+
+🔍 Mengecek nilai NaN dalam dataset mentah...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty DataFrame
+Columns: [NaN Count, NaN Percentage]
+Index: []
+Total NaN values in raw data: 0
+--------------------------------------------------
+Memulai preprocessing (filter GET, 200, dan aset)...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mengonversi waktu (dengan format ISO8601)...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data setelah preprocessing (sebelum pengelompokan sesi):
+                           IP Logname User                      Time Method                                           URI  Protocol  Status   Size
+2              199.120.110.21       -    - 1995-07-01 00:00:09+00:00    GET  /shuttle/missions/sts-73/mission-sts-73.html  HTTP/1.0     200   4085
+7             205.212.115.106       -    - 1995-07-01 00:00:12+00:00    GET             /shuttle/countdown/countdown.html  HTTP/1.0     200   3985
+18  ppptky391.asahi-net.or.jp       -    - 1995-07-01 00:00:18+00:00    GET                         /facts/about_ksc.html  HTTP/1.0     200   3977
+22   waters-gw.starway.net.au       -    - 1995-07-01 00:00:25+00:00    GET      /shuttle/missions/51-l/mission-51-l.html  HTTP/1.0     200   6723
+37     gayle-gaston.tenet.edu       -    - 1995-07-01 00:00:50+00:00    GET  /shuttle/missions/sts-71/mission-sts-71.html  HTTP/1.0     200  12040
+--------------------------------------------------
+✅ Jumlah data setelah diproses (df_clean): 395507
+🗑️ Jumlah data &#39;sampah&#39; (aset/error) yang dibuang: 1496207
+📉 Persentase penyusutan data: 79.09%
+--------------------------------------------------
+Mengelompokkan sesi (timeout: 0:30:00)...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- PRATINJAU LOG DENGAN SESI ---
+         SessionID                               IP                      Time                                                     URI  Status
+727799           1                      ***.novo.dk 1995-07-11 08:17:09+00:00                                               /ksc.html     200
+727853           1                      ***.novo.dk 1995-07-11 08:17:48+00:00                         /shuttle/missions/missions.html     200
+728070           1                      ***.novo.dk 1995-07-11 08:21:05+00:00            /shuttle/missions/sts-35/mission-sts-35.html     200
+728078           1                      ***.novo.dk 1995-07-11 08:21:19+00:00            /shuttle/missions/sts-35/mission-sts-35.html     200
+728185           1                      ***.novo.dk 1995-07-11 08:23:01+00:00               /shuttle/resources/orbiters/columbia.html     200
+452773           2                   007.thegap.com 1995-07-06 17:24:28+00:00            /shuttle/missions/sts-71/mission-sts-71.html     200
+452946           2                   007.thegap.com 1995-07-06 17:26:24+00:00  /shuttle/missions/sts-71/sts-71-day-09-highlights.html     200
+453128           2                   007.thegap.com 1995-07-06 17:28:35+00:00            /shuttle/missions/sts-71/mission-sts-71.html     200
+454019           2                   007.thegap.com 1995-07-06 17:37:44+00:00             /shuttle/missions/sts-71/images/images.html     200
+462535           3                   007.thegap.com 1995-07-06 19:23:26+00:00                            /shuttle/countdown/tour.html     200
+462738           3                   007.thegap.com 1995-07-06 19:26:24+00:00                                   /facilities/mila.html     200
+463280           3                   007.thegap.com 1995-07-06 19:34:36+00:00            /shuttle/technology/sts-newsref/sts-jsc.html     200
+1889725          4  01-dynamic-c.rotterdam.luna.net 1995-07-28 12:58:33+00:00                                       /facts/faq10.html     200
+299938           5  01-dynamic-c.wokingham.luna.net 1995-07-05 07:36:59+00:00             /shuttle/missions/sts-71/movies/movies.html     200
+652537           6  01-dynamic-c.wokingham.luna.net 1995-07-10 08:18:27+00:00                                   /history/history.html     200
+--------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data log yang sudah dikelompokkan disimpan ke &#39;hasil_log_dengan_sesiNASA.csv&#39;
+
+Membuat matriks Sesi x Halaman...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- HASIL AKHIR (MATRIKS) ---
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">166</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gagal menyimpan file &#39;hasil_matriks_sesiNASA.csv&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">166</span> <span class="n">main</span><span class="p">()</span>
+
+<span class="nn">Cell In[1], line 157,</span> in <span class="ni">main</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="n">final_output</span> <span class="o">=</span> <span class="n">matrix_binary</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;SessionID&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- HASIL AKHIR (MATRIKS) ---&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">157</span> <span class="nb">print</span><span class="p">(</span><span class="n">final_output</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="c1"># Menyimpan file matriks</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\util\_decorators.py:333,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">333</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\core\frame.py:1398,</span> in <span class="ni">DataFrame.to_string</span><span class="nt">(self, buf, columns, col_space, header, index, na_rep, formatters, float_format, sparsify, index_names, justify, max_rows, max_cols, show_dimensions, decimal, line_width, min_rows, max_colwidth, encoding)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span> <span class="k">with</span> <span class="n">option_context</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="n">max_colwidth</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1380</span>     <span class="n">formatter</span> <span class="o">=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">DataFrameFormatter</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1381</span>         <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span>         <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1396</span>         <span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1397</span>     <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1398</span>     <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">DataFrameRenderer</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1399</span>         <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1400</span>         <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1401</span>         <span class="n">line_width</span><span class="o">=</span><span class="n">line_width</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1402</span>     <span class="p">)</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\format.py:962,</span> in <span class="ni">DataFrameRenderer.to_string</span><span class="nt">(self, buf, encoding, line_width)</span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.io.formats.string</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringFormatter</span>
+<span class="g g-Whitespace">    </span><span class="mi">961</span> <span class="n">string_formatter</span> <span class="o">=</span> <span class="n">StringFormatter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="n">line_width</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">962</span> <span class="n">string</span> <span class="o">=</span> <span class="n">string_formatter</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\string.py:29,</span> in <span class="ni">StringFormatter.to_string</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">def</span><span class="w"> </span><span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">29</span>     <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string_representation</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">should_show_dimensions</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">dimensions_info</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\string.py:44,</span> in <span class="ni">StringFormatter._get_string_representation</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_empty_info_line</span>
+<span class="ne">---&gt; </span><span class="mi">44</span> <span class="n">strcols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_strcols</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="c1"># no need to wrap around just print the whole frame</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">adjoin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="n">strcols</span><span class="p">)</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\string.py:35,</span> in <span class="ni">StringFormatter._get_strcols</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="k">def</span><span class="w"> </span><span class="nf">_get_strcols</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>     <span class="n">strcols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">get_strcols</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">is_truncated</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">strcols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_insert_dot_separators</span><span class="p">(</span><span class="n">strcols</span><span class="p">)</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\format.py:476,</span> in <span class="ni">DataFrameFormatter.get_strcols</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_strcols</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span><span class="sd">     Render a DataFrame to a list of columns (as lists of strings).</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">476</span>     <span class="n">strcols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_strcols_without_index</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span>         <span class="n">str_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_formatted_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr_frame</span><span class="p">)</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\format.py:741,</span> in <span class="ni">DataFrameFormatter._get_strcols_without_index</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="n">header_colwidth</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span>     <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">col_space</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cheader</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">740</span> <span class="n">fmt_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_col</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">741</span> <span class="n">fmt_values</span> <span class="o">=</span> <span class="n">_make_fixed_width</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="n">fmt_values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">justify</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="n">header_colwidth</span><span class="p">,</span> <span class="n">adj</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">adj</span>
+<span class="g g-Whitespace">    </span><span class="mi">743</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">745</span> <span class="n">max_len</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fmt_values</span><span class="p">),</span> <span class="n">header_colwidth</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">746</span> <span class="n">cheader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">justify</span><span class="p">(</span><span class="n">cheader</span><span class="p">,</span> <span class="n">max_len</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">justify</span><span class="p">)</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\format.py:1755,</span> in <span class="ni">_make_fixed_width</span><span class="nt">(strings, justify, minimum, adj)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1752</span>             <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span> <span class="n">max_len</span> <span class="o">-</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1753</span>     <span class="k">return</span> <span class="n">x</span>
+<span class="ne">-&gt; </span><span class="mi">1755</span> <span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="n">just</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1756</span> <span class="n">result</span> <span class="o">=</span> <span class="n">adjustment</span><span class="o">.</span><span class="n">justify</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">max_len</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">justify</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\pandas\io\formats\format.py:1755,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1752</span>             <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span> <span class="n">max_len</span> <span class="o">-</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1753</span>     <span class="k">return</span> <span class="n">x</span>
+<span class="ne">-&gt; </span><span class="mi">1755</span> <span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="n">just</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1756</span> <span class="n">result</span> <span class="o">=</span> <span class="n">adjustment</span><span class="o">.</span><span class="n">justify</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">max_len</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">justify</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Pagerank.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Page Rank</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
