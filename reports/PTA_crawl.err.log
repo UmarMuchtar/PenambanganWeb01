@@ -93,7 +93,7 @@ File [1;32mc:\users\lenovo\appdata\local\programs\python\python39\lib\site-pack
 [0;32m    188[0m     )
 [0;32m    190[0m [38;5;28;01mreturn[39;00m conn
 
-[1;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x0000010CF63FB160>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+[1;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x0000018EC41E13A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
 
 During handling of the above exception, another exception occurred:
 
@@ -127,7 +127,7 @@ File [1;32mc:\users\lenovo\appdata\local\programs\python\python39\lib\site-pack
 [1;32m--> 594[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, error [38;5;129;01mor[39;00m ResponseError(cause))
 [0;32m    596[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
 
-[1;31mMaxRetryError[0m: HTTPSConnectionPool(host='pta.trunojoyo.ac.id', port=443): Max retries exceeded with url: /c_search/byprod/10/1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000010CF63FB160>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[1;31mMaxRetryError[0m: HTTPSConnectionPool(host='pta.trunojoyo.ac.id', port=443): Max retries exceeded with url: /c_search/byprod/10/1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000018EC41E13A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
 
 During handling of the above exception, another exception occurred:
 
@@ -184,5 +184,5 @@ File [1;32mc:\users\lenovo\appdata\local\programs\python\python39\lib\site-pack
 [0;32m    679[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
 [0;32m    680[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
 
-[1;31mConnectionError[0m: HTTPSConnectionPool(host='pta.trunojoyo.ac.id', port=443): Max retries exceeded with url: /c_search/byprod/10/1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000010CF63FB160>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[1;31mConnectionError[0m: HTTPSConnectionPool(host='pta.trunojoyo.ac.id', port=443): Max retries exceeded with url: /c_search/byprod/10/1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000018EC41E13A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
 
