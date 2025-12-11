@@ -475,6 +475,263 @@ Membuat visualisasi graf (mungkin memakan waktu)...
 <img alt="_images/089b5fdd6abed5c8a188420351947a8297daedf4c05799f58dc19e67ddd37023.png" src="_images/089b5fdd6abed5c8a188420351947a8297daedf4c05799f58dc19e67ddd37023.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># --- Bagian 1: Fungsi Utama (Modifikasi dari Kode Asli) ---</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_facebook_data</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Memuat data graf, menjalankan algoritma Louvain, dan menghitung modularitas.</span>
+
+<span class="sd">    Mengembalikan objek Graf, list komunitas yang ditemukan, dan nilai modularitas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR: File &#39;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&#39; tidak ditemukan. Pastikan file ada di direktori yang sama.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="c1"># 1. Load Data</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✨ Membaca dataset...&quot;</span><span class="p">)</span>
+    <span class="c1"># Membaca dataset edge list (format: node1 node2)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_edgelist</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(),</span> <span class="n">nodetype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Data Graf dimuat:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - Jumlah Node (User): </span><span class="si">{</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - Jumlah Edge (Pertemanan): </span><span class="si">{</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 2. Deteksi Komunitas (Algoritma Louvain)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🔍 Menjalankan Algoritma Louvain (Seed=42)...&quot;</span><span class="p">)</span>
+    <span class="c1"># nx.community.louvain_communities mengembalikan list of sets, di mana setiap set adalah komunitas</span>
+    <span class="n">communities</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+    <span class="c1"># 3. Hitung Modularitas</span>
+    <span class="n">modularity</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">modularity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">communities</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⭐ Nilai Modularitas: </span><span class="si">{</span><span class="n">modularity</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - Jumlah Komunitas ditemukan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 4. Persiapan Partisi</span>
+    <span class="n">partition</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">comm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">comm</span><span class="p">:</span>
+            <span class="n">partition</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
+    
+    <span class="c1"># Visualisasi graf lengkap (Opsional, dinonaktifkan agar fokus pada tugas baru)</span>
+    <span class="c1"># visualize_full_graph(G, communities, partition, modularity)</span>
+
+    <span class="k">return</span> <span class="n">G</span><span class="p">,</span> <span class="n">communities</span><span class="p">,</span> <span class="n">modularity</span>
+
+
+<span class="c1"># --- Bagian 2: Fungsi Analisis Tambahan ---</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">analyze_and_visualize</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">communities</span><span class="p">,</span> <span class="n">modularity</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Menganalisis dan memvisualisasikan hasil deteksi komunitas.</span>
+<span class="sd">    Menjawab 3 poin permintaan user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">communities</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="c1"># 1. Output tiap komunitas dengan list anggota di dalamnya</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">--- 1. Daftar Anggota Tiap Komunitas ---&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Sortir komunitas berdasarkan ukurannya (dari terbesar ke terkecil)</span>
+    <span class="n">sorted_communities</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">communities</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_communities</span><span class="p">):</span>
+        <span class="c1"># Ambil 10 anggota pertama untuk ditampilkan (karena list mungkin sangat panjang)</span>
+        <span class="n">members_preview</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">comm</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+        <span class="c1"># Jika komunitas memiliki lebih dari 10 anggota, tambahkan elipsis</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;...&quot;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">comm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Komunitas </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (Ukuran: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">comm</span><span class="p">)</span><span class="si">}</span><span class="s2"> node):&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Anggota: </span><span class="si">{</span><span class="n">members_preview</span><span class="si">}{</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Simpan ke CSV untuk analisis lebih lanjut</span>
+    <span class="n">partition</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">comm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_communities</span><span class="p">):</span> <span class="c1"># Menggunakan list yang sudah diurutkan</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">comm</span><span class="p">:</span>
+            <span class="n">partition</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Community_ID&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;facebook_communities_sorted.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[INFO] Hasil pembagian komunitas (diurutkan) disimpan ke &#39;facebook_communities_sorted.csv&#39;&quot;</span><span class="p">)</span>
+
+
+    <span class="c1"># 2. Tampilkan graf komunitas terbesar</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">--- 2. Visualisasi Komunitas Terbesar ---&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Komunitas terbesar adalah elemen pertama setelah diurutkan</span>
+    <span class="n">largest_community_nodes</span> <span class="o">=</span> <span class="n">sorted_communities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1"># Membuat sub-graf hanya dari node-node komunitas terbesar</span>
+    <span class="n">G_largest</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">largest_community_nodes</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Gunakan .copy() untuk sub-graf independen</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sub-Graf Komunitas Terbesar dibuat (Node: </span><span class="si">{</span><span class="n">G_largest</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span><span class="si">}</span><span class="s2">, Edge: </span><span class="si">{</span><span class="n">G_largest</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">pos_largest</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G_largest</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    
+    <span class="c1"># Visualisasi dengan warna solid (misalnya biru)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span>
+        <span class="n">G_largest</span><span class="p">,</span> 
+        <span class="n">pos</span><span class="o">=</span><span class="n">pos_largest</span><span class="p">,</span> 
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+        <span class="n">node_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+        <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> 
+        <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> 
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> 
+        <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Graf Komunitas Terbesar (Ukuran: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">largest_community_nodes</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;largest_community_graph.png&#39;</span><span class="p">)</span>
+    <span class="c1"># plt.show() # Tampilkan jika tidak ingin melihat secara bertahap</span>
+
+    
+    <span class="c1"># 3. Kemudian dari graf komunitas tersebut tampilkan sub-komunitasnya</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">--- 3. Deteksi Sub-Komunitas dari Komunitas Terbesar ---&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Deteksi sub-komunitas menggunakan Louvain pada sub-graf</span>
+    <span class="c1"># Menggunakan seed yang berbeda agar hasilnya tidak sama persis jika memungkinkan</span>
+    <span class="n">sub_communities</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">G_largest</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">43</span><span class="p">)</span> 
+    
+    <span class="n">modularity_sub</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">modularity</span><span class="p">(</span><span class="n">G_largest</span><span class="p">,</span> <span class="n">sub_communities</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Sub-Komunitas ditemukan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sub_communities</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - Modularitas Sub-Graf: </span><span class="si">{</span><span class="n">modularity_sub</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Persiapan Visualisasi Sub-Komunitas</span>
+    <span class="n">sub_partition</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">comm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sub_communities</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">comm</span><span class="p">:</span>
+            <span class="n">sub_partition</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    
+    <span class="c1"># Warna node berdasarkan ID sub-komunitasnya</span>
+    <span class="n">cmap_sub</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sub_communities</span><span class="p">))</span> 
+    <span class="n">node_colors_sub</span> <span class="o">=</span> <span class="p">[</span><span class="n">sub_partition</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G_largest</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+
+    <span class="c1"># Menggunakan posisi yang sudah dihitung sebelumnya untuk konsistensi</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span>
+        <span class="n">G_largest</span><span class="p">,</span> 
+        <span class="n">pos_largest</span><span class="p">,</span> 
+        <span class="n">node_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+        <span class="n">cmap</span><span class="o">=</span><span class="n">cmap_sub</span><span class="p">,</span> 
+        <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors_sub</span>
+    <span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_largest</span><span class="p">,</span> <span class="n">pos_largest</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sub-Komunitas di Komunitas Terbesar (Louvain)</span><span class="se">\n</span><span class="s2">Modularitas: </span><span class="si">{</span><span class="n">modularity_sub</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;largest_subcommunity_graph.png&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Menampilkan visualisasi terakhir</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">[INFO] Proses selesai. Periksa file PNG dan CSV yang telah dibuat.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># --- Bagian 3: Main Execution Block ---</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    
+    <span class="c1"># 1. Jalankan fungsi pemrosesan data awal</span>
+    <span class="n">GRAPH_FILE</span> <span class="o">=</span> <span class="s1">&#39;facebook_combined.txt&#39;</span>
+    <span class="n">G_full</span><span class="p">,</span> <span class="n">communities_full</span><span class="p">,</span> <span class="n">modularity_full</span> <span class="o">=</span> <span class="n">process_facebook_data</span><span class="p">(</span><span class="n">GRAPH_FILE</span><span class="p">)</span>
+    
+    <span class="c1"># 2. Jalankan fungsi analisis dan visualisasi</span>
+    <span class="k">if</span> <span class="n">G_full</span> <span class="ow">and</span> <span class="n">communities_full</span><span class="p">:</span>
+        <span class="n">analyze_and_visualize</span><span class="p">(</span><span class="n">G_full</span><span class="p">,</span> <span class="n">communities_full</span><span class="p">,</span> <span class="n">modularity_full</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✨ Membaca dataset...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Data Graf dimuat:
+ - Jumlah Node (User): 4039
+ - Jumlah Edge (Pertemanan): 88234
+
+🔍 Menjalankan Algoritma Louvain (Seed=42)...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⭐ Nilai Modularitas: 0.8349
+ - Jumlah Komunitas ditemukan: 16
+
+
+--- 1. Daftar Anggota Tiap Komunitas ---
+
+Komunitas 1 (Ukuran: 548 node):
+  Anggota: [857, 862, 865, 868, 1085, 3437, 3438, 3439, 3440, 3441]...
+
+Komunitas 2 (Ukuran: 535 node):
+  Anggota: [2661, 2662, 2665, 2667, 2668, 2671, 2672, 2674, 2675, 2677]...
+
+Komunitas 3 (Ukuran: 435 node):
+  Anggota: [1024, 1026, 1027, 1028, 1029, 1034, 1038, 1039, 1040, 1046]...
+
+Komunitas 4 (Ukuran: 431 node):
+  Anggota: [1025, 1430, 34, 1064, 505, 1080, 1094, 1095, 424, 1113]...
+
+Komunitas 5 (Ukuran: 423 node):
+  Anggota: [2048, 2049, 2051, 2052, 2053, 2054, 2057, 2062, 2065, 2066]...
+
+Komunitas 6 (Ukuran: 350 node):
+  Anggota: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]...
+
+Komunitas 7 (Ukuran: 324 node):
+  Anggota: [1032, 1035, 1036, 1037, 1041, 1042, 1044, 1051, 1052, 1060]...
+
+Komunitas 8 (Ukuran: 237 node):
+  Anggota: [2560, 2561, 2563, 2564, 2055, 2056, 2058, 2059, 2060, 2573]...
+
+Komunitas 9 (Ukuran: 226 node):
+  Anggota: [3073, 3078, 3080, 3084, 3085, 3090, 3092, 3095, 3096, 3098]...
+
+Komunitas 10 (Ukuran: 206 node):
+  Anggota: [686, 687, 688, 689, 690, 691, 692, 693, 694, 695]...
+
+Komunitas 11 (Ukuran: 128 node):
+  Anggota: [1030, 1031, 1033, 1546, 1548, 1553, 1555, 1043, 1045, 1562]...
+
+Komunitas 12 (Ukuran: 73 node):
+  Anggota: [2050, 2061, 2583, 2585, 2337, 2346, 2097, 2364, 2365, 2620]...
+
+Komunitas 13 (Ukuran: 60 node):
+  Anggota: [3980, 3981, 3982, 3983, 3984, 3985, 3986, 3987, 3988, 3989]...
+
+Komunitas 14 (Ukuran: 25 node):
+  Anggota: [640, 577, 578, 643, 576, 582, 647, 583, 650, 658]...
+
+Komunitas 15 (Ukuran: 19 node):
+  Anggota: [3008, 2889, 2699, 2767, 2959, 2703, 2834, 3283, 2972, 3423]...
+
+Komunitas 16 (Ukuran: 19 node):
+  Anggota: [1988, 1924, 1992, 2444, 2255, 2320, 2513, 2515, 2650, 2076]...
+
+[INFO] Hasil pembagian komunitas (diurutkan) disimpan ke &#39;facebook_communities_sorted.csv&#39;
+
+
+--- 2. Visualisasi Komunitas Terbesar ---
+Sub-Graf Komunitas Terbesar dibuat (Node: 548, Edge: 5356)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 3. Deteksi Sub-Komunitas dari Komunitas Terbesar ---
+✅ Sub-Komunitas ditemukan: 8
+ - Modularitas Sub-Graf: 0.6196
+</pre></div>
+</div>
+<img alt="_images/de3e6cf0978d35f2eb82f7b5a4ac072b52abd742479e80160c958b661beb88b3.png" src="_images/de3e6cf0978d35f2eb82f7b5a4ac072b52abd742479e80160c958b661beb88b3.png" />
+<img alt="_images/2ce12981cf8a68903b9588cfc2ab1bbfad3a7320c6db81bab8e3ffc2c9385646.png" src="_images/2ce12981cf8a68903b9588cfc2ab1bbfad3a7320c6db81bab8e3ffc2c9385646.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] Proses selesai. Periksa file PNG dan CSV yang telah dibuat.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -515,6 +772,15 @@ Membuat visualisasi graf (mungkin memakan waktu)...
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Web Usage</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Word_Graph.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Word Graph</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
