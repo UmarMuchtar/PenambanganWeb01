@@ -26,7 +26,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-df_raw = load_data(log_file_path)
-display(df_raw.head())
+['import fitz  # PyMuPDF', 'import nltk', 'import networkx as nx', 'import matplotlib.pyplot as plt', 'import re']
+...
+["    plt.axis('off')", '    plt.show()', '', 'if __name__ == "__main__":', '    main()']
 -------------------
 

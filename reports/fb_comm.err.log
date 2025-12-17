@@ -26,7 +26,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-df_raw = load_data(log_file_path)
-display(df_raw.head())
+['import networkx as nx', 'import matplotlib.pyplot as plt', 'import pandas as pd', '', 'def process_facebook_data(file_path):']
+...
+['    plt.show()', '', '# Jalankan fungsi', '# Pastikan file facebook_combined.txt ada di folder yang sama', "process_facebook_data('facebook_combined.txt')"]
 -------------------
 
